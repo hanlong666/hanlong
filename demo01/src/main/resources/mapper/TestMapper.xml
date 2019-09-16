@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.TestMapper" >
+
+    <select id="list" resultType="com.example.demo.pojo.Tanimal">
+        SELECT  * FROM t_animal;
+    </select>
+
+    <!--updateTanimal-->
+    <update id="updateTanimal" parameterType="com.example.demo.pojo.Tanimal" >
+        UPDATE t_animal SET name=#{name} WHERE ID = #{id}
+    </update>
+
+    <!--interTanimal-->
+    <insert id="interTanimal" parameterType="com.example.demo.pojo.Tanimal">
+        INSERT INTO t_animal VALUES (#{id},#{name},#{datea},#{categoryId},#{distributionId})
+    </insert>
+</mapper>
